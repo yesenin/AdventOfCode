@@ -46,4 +46,11 @@ public class Day01Tests
         var result = sut.GetAnswer();
         Assert.Equal(expectedResult, result);
     }
+    
+    [Fact]
+    public void Day1_Part1_ShouldThrowException()
+    {
+        var sut = new Day01Part1();
+        Assert.Throws<ArgumentException>(() => sut.GetAnswer());
+    }
 }
