@@ -1,0 +1,124 @@
+############################
+# .NET build artifacts
+############################
+bin/
+obj/
+out/
+artifacts/
+TestResults/
+*.log
+
+############################
+# User-specific files
+############################
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+############################
+# Rider / ReSharper
+############################
+.idea/
+*.DotSettings.user
+_ReSharper.Caches/
+_ReSharper*/
+*.sln.iml
+
+# Rider caches (optional, usually big)
+# .idea/.idea.SolutionName/.idea/
+
+############################
+# OS-specific
+############################
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.*.swp
+.*.swo
+
+############################
+# NuGet and Paket
+############################
+# NuGet Packages
+*.nupkg
+# packages/ (only if not using "packages.config")
+packages/
+# NuGet v3 lock file
+project.lock.json
+
+# Paket
+.paket/
+paket-files/
+
+############################
+# ASP.NET / other frameworks
+############################
+# User secrets
+**/secrets.json
+
+# Environment config
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# IIS Express
+.vs/
+*.vspscc
+
+############################
+# Logs / temp
+############################
+*.log
+*.tlog
+*.vscode/*
+*.tmp
+*.temp
+*.bak
+
+############################
+# Entity Framework
+############################
+# Migrations build artifacts
+*.dbmdl
+*.jfm
+
+############################
+# SQL Server / SQLite
+############################
+*.mdf
+*.ldf
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+
+############################
+# MAUI / Xamarin
+############################
+*.apk
+*.ap_ 
+*.aab
+*.obb
+*.ipa
+
+############################
+# Publish
+############################
+publish/
+wwwroot/dist/
+node_modules/
+
+############################
+# Rider external tools
+############################
+.idea.DataGrip/
+.idea/.idea.*
