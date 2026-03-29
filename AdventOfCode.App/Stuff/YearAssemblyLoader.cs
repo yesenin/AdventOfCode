@@ -8,7 +8,7 @@ internal static class YearAssemblyLoader
 {
     public static Assembly Load(int year)
     {
-        var assemblyName = $"AdventOfCode.Year{year}";
+        var assemblyName = $"Year{year}";
         Log.Debug("Resolving year assembly {AssemblyName}.", assemblyName);
 
         var loadedAssembly = AssemblyLoadContext.Default.Assemblies

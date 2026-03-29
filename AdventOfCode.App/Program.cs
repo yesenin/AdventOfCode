@@ -15,10 +15,10 @@ internal static class Program
     // Update these defaults when you want to debug a different puzzle from the IDE.
     private static readonly RunnerOptions DebugOptions = new(
         Year: 2015,
-        Day: 1,
+        Day: 3,
         Part: 2,
         RequestedInputKind: InputKind.Task,
-        Verbose: true,
+        Verbose: false,
         InputPath: null);
 
     public static void Main(string[] args)
@@ -180,7 +180,7 @@ internal static class Program
     private static void InjectLogger(IProblemWithInput problem)
     {
         var loggerProperty = problem.GetType().GetProperty("Logger", BindingFlags.Public | BindingFlags.Instance);
-        if (loggerProperty is null || !loggerProperty.CanWrite || !typeof(Serilog.ILogger).IsAssignableFrom(loggerProperty.PropertyType))
+        if (loggerProperty is null || !loggerProperty.CanWrite || !typeof(ILogger).IsAssignableFrom(loggerProperty.PropertyType))
         {
             return;
         }

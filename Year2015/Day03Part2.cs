@@ -2,13 +2,13 @@
 
 namespace AdventOfCode.Year2015;
 
-public class Day03Part2 : IProblemWithInput
+public class Day03Part2 : BaseProblemWithInput
 {
-    public string GetAnswer()
+    protected override string GetAnswerInner()
     {
-        var lines = Input.Split('\n');
+        var lines = Input!.Split('\n');
 
-        var answer = new List<int>();
+        var answer = 0;
         foreach (var line in lines)
         {
             var currentSantaPoint = new Point(0, 0);
@@ -22,41 +22,24 @@ public class Day03Part2 : IProblemWithInput
             {
                 var x = i % 2 > 0 ? currentSantaPoint.X :  currentBotPoint.X;
                 var y = i % 2 > 0 ? currentSantaPoint.Y : currentBotPoint.Y;
-                switch (line[i])
-                {
-                    case '^':
-                        y++;
-                        break;
-                    case 'v':
-                        y--;
-                        break;
-                    case '>':
-                        x++;
-                        break;
-                    case '<':
-                        x--;
-                        break;
-                }
+                var point = Day03Common.ShiftPoint(new Point(x, y), line[i]);
 
-                uniquePoints.Add(new Point(x, y));
+                uniquePoints.Add(point);
                 if (i % 2 > 0)
                 {
-                    currentSantaPoint = new Point(x, y);
+                    currentSantaPoint = point;
                 }
                 else
                 {
-                    currentBotPoint = new Point(x, y);
+                    currentBotPoint = point;
                 }
             }
-            answer.Add( uniquePoints.Count );
+            answer += uniquePoints.Count;
         }
         
-        return string.Join("\n", answer);
+        return answer.ToString();
     }
     
-    record Point(int X, int Y);
-
-    public string? Url { get; }
-    public string? Title { get; }
-    public string? Input { get; set; }
+    public override string Url => "https://adventofcode.com/2015/day/3";
+    public override string Title => "Day 3 Part 2: Santa and Bot";
 }
