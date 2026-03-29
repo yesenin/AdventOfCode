@@ -5,16 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <AssemblyName>AdventOfCode.Year2015</AssemblyName>
-    <RootNamespace>AdventOfCode.Year2015</RootNamespace>
+    <RootNamespace>AdventOfCode.Year2020</RootNamespace>
+    <PackageId>Year2020</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="../Common/Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Serilog" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

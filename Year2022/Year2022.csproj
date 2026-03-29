@@ -5,8 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <AssemblyName>AdventOfCode.Year2020</AssemblyName>
-    <RootNamespace>AdventOfCode.Year2020</RootNamespace>
+    <RootNamespace>AdventOfCode.Year2022</RootNamespace>
+    <PackageId>Year2022</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

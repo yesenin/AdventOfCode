@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Year2015.Tests;
 
-public class Day1Tests
+public class Day01Tests
 {
     [Theory]
     [InlineData("(())", "0")]

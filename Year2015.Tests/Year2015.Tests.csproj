@@ -5,6 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
+
+        <AnalysisLevel>latest-minimum</AnalysisLevel>
+
+        <OutputType>Library</OutputType>
+
+        <RootNamespace>AdventOfCode.Year2015.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Year2015\AdventOfCode.Year2015.csproj" />
+      <ProjectReference Include="..\Year2015\Year2015.csproj" />
     </ItemGroup>
 
 </Project>
