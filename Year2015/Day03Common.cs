@@ -1,3 +1,5 @@
+using Common;
+
 namespace AdventOfCode.Year2015;
 
 public static class Day03Common
@@ -14,5 +16,3 @@ public static class Day03Common
         };
     }
 }
-
-public record Point(int X, int Y);

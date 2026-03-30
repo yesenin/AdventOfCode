@@ -15,7 +15,7 @@ internal static class Program
     // Update these defaults when you want to debug a different puzzle from the IDE.
     private static readonly RunnerOptions DebugOptions = new(
         Year: 2015,
-        Day: 3,
+        Day: 6,
         Part: 2,
         RequestedInputKind: InputKind.Task,
         Verbose: false,
