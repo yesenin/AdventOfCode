@@ -86,7 +86,7 @@ public sealed class Day11Part2 : IProblemWithInput
         }
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

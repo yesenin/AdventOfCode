@@ -136,7 +136,7 @@ public class Day01Part2 : IProblemWithInput
         return $"{string.Join(", ", finishes)}";
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

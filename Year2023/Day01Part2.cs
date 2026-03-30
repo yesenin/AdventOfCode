@@ -63,7 +63,7 @@ public class Day01Part2 : IProblemWithInput
         }
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "https://adventofcode.com/2023/day/1";
+    public string Title => "Calorie Counting";
     public string? Input { get; set; }
 }

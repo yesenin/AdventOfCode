@@ -22,7 +22,6 @@ public class Day03Part1 : IProblemWithInput
         var digitRegex = new Regex(@"\d{1}");
 
         var numberIsGoing = false;
-        (int x, int y)? currentNumber = null;
         var numberId = 0;
         
         foreach (var line in lines)
@@ -82,7 +81,7 @@ public class Day03Part1 : IProblemWithInput
         return answer.ToString();
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }
