@@ -48,8 +48,8 @@ public sealed class Day05Part1 : IProblemWithInput
         return freshCount.ToString();
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 
     record Range(ulong Start, ulong End)

@@ -7,7 +7,7 @@ public class Day02Part1 : IProblemWithInput
     public string GetAnswer()
     {
         ulong answer = 0;
-        var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
+        var lines = Input!.Split('\n', StringSplitOptions.TrimEntries);
         
         var space = lines.First().Split(',').Select(int.Parse).ToList();
 
@@ -39,17 +39,17 @@ public class Day02Part1 : IProblemWithInput
         return $"{answer}";
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
-    
-    abstract class Operation(int address1, int address2, int resultAddress)
+
+    private abstract class Operation()
     {
         public abstract string Type();
         public abstract List<int> Invoke(List<int> space);
     }
 
-    class AddOperation(int address1, int address2, int resultAddress) : Operation(address1, address2, resultAddress)
+    class AddOperation(int address1, int address2, int resultAddress) : Operation
     {
         public override string Type() => "ADD";
         
@@ -60,7 +60,7 @@ public class Day02Part1 : IProblemWithInput
         }
     }
 
-    class MulOperation(int address1, int address2, int resultAddress) : Operation(address1, address2, resultAddress)
+    class MulOperation(int address1, int address2, int resultAddress) : Operation
     {
         public override string Type() => "MUL";
         
@@ -71,7 +71,7 @@ public class Day02Part1 : IProblemWithInput
         }
     }
 
-    class HaltOperation(int address1, int address2, int resultAddress) : Operation(address1, address2, resultAddress)
+    class HaltOperation : Operation
     {
         public override string Type() => "HALT";
         
@@ -81,7 +81,7 @@ public class Day02Part1 : IProblemWithInput
         }
     }
 
-    class NoOperation(int address1, int address2, int resultAddress) : Operation(address1, address2, resultAddress)
+    class NoOperation : Operation
     {
         public override string Type() => "NOOP";
         
@@ -102,9 +102,9 @@ public class Day02Part1 : IProblemWithInput
                 case 2:
                     return new MulOperation(args[0], args[1], args[2]);
                 case 3:
-                    return new HaltOperation(0, 0, 0);
+                    return new HaltOperation();
                 default:
-                    return new NoOperation(0, 0, 0);
+                    return new NoOperation();
             }
         }
     }

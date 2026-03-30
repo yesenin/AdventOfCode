@@ -18,10 +18,10 @@ jobs:
           dotnet-version: 10.0.x
 
       - name: Restore
-        run: dotnet restore AdventOfCode.slnx
+        run: dotnet restore AdventOfCode.sln
 
       - name: Build
-        run: dotnet build AdventOfCode.slnx --configuration Release --no-restore
+        run: dotnet build AdventOfCode.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test AdventOfCode.slnx --configuration Release --no-build
+        run: dotnet test AdventOfCode.sln --configuration Release --no-build

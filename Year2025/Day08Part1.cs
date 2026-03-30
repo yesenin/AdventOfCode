@@ -79,8 +79,8 @@ public sealed class Day08Part1 : IProblemWithInput
         }
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
     
     record Point3d(int X, int Y, int Z)

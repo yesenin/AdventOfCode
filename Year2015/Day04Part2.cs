@@ -37,7 +37,7 @@ public class Day04Part2 : IProblemWithInput
     
     record Point(int X, int Y);
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

@@ -140,8 +140,8 @@ public sealed class Day05Part2 : IProblemWithInput
         return totalCount.ToString();
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 
     record Range
