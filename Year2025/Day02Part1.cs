@@ -32,7 +32,7 @@ public sealed class Day02Part1 : IProblemWithInput
         return answer.ToString();
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

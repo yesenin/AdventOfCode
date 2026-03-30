@@ -33,7 +33,7 @@ public class Day03Part1 : IProblemWithInput
         return result;
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

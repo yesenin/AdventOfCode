@@ -61,7 +61,7 @@ public class Day02Part2 : IProblemWithInput
         return answer.ToString();
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "https://adventofcode.com/2023/day/2";
+    public string Title => "Calorie Counting";
     public string? Input { get; set; }
 }

@@ -63,7 +63,7 @@ public class Day05Part2 : IProblemWithInput
         return sum;
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 }

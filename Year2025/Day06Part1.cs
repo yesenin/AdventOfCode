@@ -72,8 +72,8 @@ public sealed class Day06Part1 : IProblemWithInput
         }
     }
 
-    public string? Url { get; }
-    public string? Title { get; }
+    public string Url => "!TBD";
+    public string Title => "!TBD";
     public string? Input { get; set; }
 
     record Range(ulong Start, ulong End)
