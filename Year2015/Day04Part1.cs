@@ -4,11 +4,11 @@ using Common;
 
 namespace AdventOfCode.Year2015;
 
-public class Day04Part1 : IProblemWithInput
+public class Day04Part1 : BaseProblemWithInput
 {
-    public string GetAnswer()
+    protected override string GetAnswerInner()
     {
-        var lines = Input.Split('\n');
+        var lines = Input!.Split('\n');
 
         var answer = new List<string>();
 
@@ -37,7 +37,6 @@ public class Day04Part1 : IProblemWithInput
     
     record Point(int X, int Y);
 
-    public string Url => "!TBD";
-    public string Title => "!TBD";
-    public string? Input { get; set; }
+    public override string Url => "https://adventofcode.com/2015/day4";
+    public override string Title => "!TBD";
 }
