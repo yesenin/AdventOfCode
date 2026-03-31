@@ -4,11 +4,11 @@ namespace AdventOfCode.Year2015;
 
 public class Day03Part1 : BaseProblemWithInput
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n');
 
-        var answer = new List<int>();
+        var answer = 0;
         foreach (var line in lines)
         {
             var currentPoint = new Point(0, 0);
@@ -21,10 +21,10 @@ public class Day03Part1 : BaseProblemWithInput
                 currentPoint = Day03Common.ShiftPoint(currentPoint, move);
                 uniquePoints.Add(currentPoint);
             }
-            answer.Add(uniquePoints.Count);
+            answer += uniquePoints.Count;
         }
         
-        return string.Join("\n", answer);
+        return answer;
     }
 
     

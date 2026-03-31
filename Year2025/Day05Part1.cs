@@ -4,13 +4,13 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day05Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         var parseRanges = true;
         
         var ranges = new List<Range>();
-        var ingridients = new List<ulong>();
+        var ingridients = new List<long>();
         
         foreach (var line in lines)
         {
@@ -23,11 +23,11 @@ public sealed class Day05Part1 : IProblemWithInput
             if (parseRanges)
             {
                 var parts = line.Trim().Split('-');
-                ranges.Add(new Range(ulong.Parse(parts[0]), ulong.Parse(parts[1])));
+                ranges.Add(new Range(long.Parse(parts[0]), long.Parse(parts[1])));
             }
             else
             {
-                ingridients.Add(ulong.Parse(line.Trim()));
+                ingridients.Add(long.Parse(line.Trim()));
             }
         }
 
@@ -45,15 +45,15 @@ public sealed class Day05Part1 : IProblemWithInput
             }
         }
 
-        return freshCount.ToString();
+        return freshCount;
     }
 
     public string Url => "!TBD";
     public string Title => "!TBD";
     public string? Input { get; set; }
 
-    record Range(ulong Start, ulong End)
+    record Range(long Start, long End)
     {
-        public bool InRange(ulong n) => n >= Start && n <= End;
+        public bool InRange(long n) => n >= Start && n <= End;
     }
 }

@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2017;
 
 public class Day04Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0;
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
@@ -23,7 +23,7 @@ public class Day04Part1 : IProblemWithInput
             }
         }
         
-        return answer.ToString();
+        return answer;
     }
 
     private int FindSum(string line)

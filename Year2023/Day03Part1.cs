@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2023;
 
 public class Day03Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries);
         var answer = 0L;
@@ -78,7 +78,7 @@ public class Day03Part1 : IProblemWithInput
 
         answer = connectedNumbers.Select(x => int.Parse(numbers[x])).Sum();
         
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "!TBD";

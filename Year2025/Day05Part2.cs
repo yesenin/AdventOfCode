@@ -4,13 +4,13 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day05Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         var parseRanges = true;
         
         var ranges = new List<Range>();
-        var ingridients = new List<ulong>();
+        var ingridients = new List<long>();
         
         foreach (var line in lines)
         {
@@ -23,8 +23,8 @@ public sealed class Day05Part2 : IProblemWithInput
             if (parseRanges)
             {
                 var parts = line.Trim().Split('-');
-                ulong start = ulong.Parse(parts[0]);
-                ulong end = ulong.Parse(parts[1]);
+                long start = long.Parse(parts[0]);
+                long end = long.Parse(parts[1]);
                 if (start >= end)
                 {
                     (start, end) = (end, start);
@@ -38,11 +38,11 @@ public sealed class Day05Part2 : IProblemWithInput
             }
             else
             {
-                ingridients.Add(ulong.Parse(line.Trim()));
+                ingridients.Add(long.Parse(line.Trim()));
             }
         }
 
-        var allFresh = new HashSet<ulong>();
+        var allFresh = new HashSet<long>();
         
         ranges.Sort((a, b) => a.Start.CompareTo(b.Start));
         //ingridients.Sort((a, b) => a.CompareTo(b));
@@ -130,14 +130,14 @@ public sealed class Day05Part2 : IProblemWithInput
             return "0";
         }
 
-        ulong totalCount = 0;
+        long totalCount = 0;
         
         foreach (var normalizedRange in normalizedRanges)
         {
             totalCount += normalizedRange.Length;
         }
         
-        return totalCount.ToString();
+        return totalCount;
     }
 
     public string Url => "!TBD";
@@ -146,14 +146,14 @@ public sealed class Day05Part2 : IProblemWithInput
 
     record Range
     {
-        public ulong Start { get; set; }
-        public ulong End { get; set; }
-        public bool InRange(ulong n) => n >= Start && n <= End;
-        public ulong Length => End - Start + 1;
+        public long Start { get; set; }
+        public long End { get; set; }
+        public bool InRange(long n) => n >= Start && n <= End;
+        public long Length => End - Start + 1;
 
-        public IEnumerable<ulong> Expand()
+        public IEnumerable<long> Expand()
         {
-            for (ulong i = Start; i <= End; i++)
+            for (long i = Start; i <= End; i++)
             {
                 yield return i;
             }

@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2015;
 
 public class Day02Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         if (string.IsNullOrEmpty(Input))
         {
@@ -24,7 +24,7 @@ public class Day02Part2 : IProblemWithInput
             total += ribbon + bow;
         }
 
-        return total.ToString();
+        return total;
     }
 
     public string Url => "https://adventofcode.com/2020/day02/part2/";

@@ -6,11 +6,11 @@ namespace AdventOfCode.Year2015;
 
 public class Day04Part2 : BaseProblemWithInput
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n');
 
-        var answer = new List<string>();
+        var answer = 0;
 
         foreach (var line in lines)
         {
@@ -29,10 +29,10 @@ public class Day04Part2 : BaseProblemWithInput
                 i++;
             }
             
-            answer.Add(i.ToString());
+            answer += i;
         }
         
-        return string.Join("\n", answer);
+        return answer;
     }
     
     record Point(int X, int Y);

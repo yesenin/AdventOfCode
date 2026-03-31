@@ -5,20 +5,20 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day03Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n');
         foreach (var line in lines)
         {
             answer += MaxSubsequenceNumber(line.Trim(), 12);
         }
-        return answer.ToString();
+        return answer;
     }
 
-    private ulong FindMax(string line)
+    private long FindMax(string line)
     {
-        ulong result = 0;
+        long result = 0;
         var numbers = line.Select(x => int.Parse(x.ToString())).ToArray();
         foreach (var arrangement in GetCombinations(numbers.Length, 12))
         {
@@ -28,7 +28,7 @@ public sealed class Day03Part2 : IProblemWithInput
                 localSum.Append(numbers[i]);
             }
 
-            var sum = ulong.Parse(localSum.ToString());
+            var sum = long.Parse(localSum.ToString());
 
             if (sum > result)
             {
@@ -91,7 +91,7 @@ public sealed class Day03Part2 : IProblemWithInput
         return Backtrack(0, 0);
     }
 
-    private ulong MaxSubsequenceNumber(string digits, int k)
+    private long MaxSubsequenceNumber(string digits, int k)
     {
         if (digits == null) 
             throw new ArgumentNullException(nameof(digits));
@@ -127,7 +127,7 @@ public sealed class Day03Part2 : IProblemWithInput
         if (stack.Count > k)
             stack.RemoveRange(k, stack.Count - k);
 
-        return ulong.Parse(new string(stack.ToArray()));
+        return long.Parse(new string(stack.ToArray()));
     }
 
     

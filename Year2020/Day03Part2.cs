@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2020;
 
 public class Day03Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
 
@@ -21,7 +21,7 @@ public class Day03Part2 : IProblemWithInput
         answer *= Slope(7, 1);
         answer *= Slope(1, 2);
         
-        return $"{answer}";
+        return answer;
 
         long Slope(int di, int dj)
         {

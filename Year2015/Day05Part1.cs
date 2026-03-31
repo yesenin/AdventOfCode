@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2015;
 
 public class Day05Part1 : BaseProblemWithInput
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n').Select(x => x.Trim()).ToArray();
         var answer = new List<string>();
@@ -29,7 +29,7 @@ public class Day05Part1 : BaseProblemWithInput
             }
         }
         
-        return string.Join("\n", answer) + $"\n{count}";
+        return long.Parse(string.Join("\n", answer) + $"\n{count}");
 
         void Rec(string line, int i, State state)
         {

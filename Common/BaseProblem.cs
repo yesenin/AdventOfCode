@@ -11,7 +11,7 @@ public abstract class BaseProblem : IProblem
         return $"{answer} (computed in {elapsedMs} ms)";
     }
 
-    public abstract string GetAnswer();
+    public abstract long GetAnswer();
 
     public virtual string Url => "!TBD";
 

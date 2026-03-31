@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2023;
 
 public class Day02Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries);
         var answer = 0L;
@@ -58,7 +58,7 @@ public class Day02Part2 : IProblemWithInput
             answer += state.Select(x => x.Value).Aggregate((a, b) => a * b);
         }
         
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "https://adventofcode.com/2023/day/2";

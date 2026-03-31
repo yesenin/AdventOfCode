@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day01Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var a = Input.Split('\n');
         var pos = 50;
@@ -48,7 +48,7 @@ public sealed class Day01Part1 : IProblemWithInput
                 answer++;
             }
         }
-        return answer.ToString();
+        return answer;
     }
 
     private int ModAdd(int a, int b, int mod)

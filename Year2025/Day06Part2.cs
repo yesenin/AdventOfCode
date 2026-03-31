@@ -5,10 +5,10 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day06Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n').ToArray();
-        ulong answer = 0;
+        long answer = 0;
         
         var length = lines.Max(x => x.Length);
         var height = lines.Length;
@@ -54,7 +54,7 @@ public sealed class Day06Part2 : IProblemWithInput
         foreach (var f in fred)
         {
             var parts = f.Split(';', StringSplitOptions.RemoveEmptyEntries);
-            var items =  parts.Take(parts.Length - 1).Select(x => ulong.Parse(x)).ToArray();
+            var items =  parts.Take(parts.Length - 1).Select(x => long.Parse(x)).ToArray();
             var o = parts.Last();
             if (o == "*")
             {
@@ -68,11 +68,11 @@ public sealed class Day06Part2 : IProblemWithInput
         }
         
         
-        return answer.ToString();
+        return answer;
 
-        ulong Add(params ulong[] values)
+        long Add(params long[] values)
         {
-            ulong result = 0;
+            long result = 0;
             foreach (var value in values)
             {
                 result += value;
@@ -80,9 +80,9 @@ public sealed class Day06Part2 : IProblemWithInput
             return result;
         }
         
-        ulong Mul(params ulong[] values)
+        long Mul(params long[] values)
         {
-            ulong result = 1;
+            long result = 1;
             foreach (var value in values)
             {
                 result *= value;

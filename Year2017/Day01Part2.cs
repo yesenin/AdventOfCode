@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2017;
 
 public class Day01Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0;
         var lines = Input.Split('\n');
@@ -22,7 +22,7 @@ public class Day01Part2 : IProblemWithInput
             }
             answer += sum;
         }
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "!TBD";

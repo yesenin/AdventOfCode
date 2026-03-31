@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2021;
 
 public class Day01Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         var numbers = lines.Select(int.Parse).ToArray();
@@ -33,7 +33,7 @@ public class Day01Part2 : IProblemWithInput
             prevNumber = number;
         }
         
-        return $"{increases}";
+        return increases;
     }
 
     public string Url => "!TBD";

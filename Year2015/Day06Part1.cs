@@ -7,7 +7,7 @@ public class Day06Part1 : BaseProblemWithInput
 {
     private readonly bool[,] _grid = new bool[1000, 1000];
     
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n').Select(x => x.Trim()).ToArray();
 
@@ -25,7 +25,7 @@ public class Day06Part1 : BaseProblemWithInput
         
         answer = _grid.Cast<bool>().Count(x => x);
         
-        return answer.ToString();
+        return answer;
     }
 
     public (Point from, Point to, string action)? ParseLine(string parse)

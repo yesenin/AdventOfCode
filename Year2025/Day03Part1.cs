@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2025;
 
 public class Day03Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0;
         var lines = Input.Split('\n');
@@ -12,7 +12,7 @@ public class Day03Part1 : IProblemWithInput
         {
             answer += FindMax(line);
         }
-        return answer.ToString();
+        return answer;
     }
 
     private int FindMax(string line)

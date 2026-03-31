@@ -4,9 +4,9 @@ namespace AdventOfCode.Year2019;
 
 public class Day02Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input!.Split('\n', StringSplitOptions.TrimEntries);
         
         var space = lines.First().Split(',').Select(int.Parse).ToList();
@@ -34,9 +34,9 @@ public class Day02Part1 : IProblemWithInput
             i++;
         }
 
-        answer = (ulong)space[0];
+        answer = space[0];
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "!TBD";

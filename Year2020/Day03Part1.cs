@@ -4,9 +4,9 @@ namespace AdventOfCode.Year2020;
 
 public class Day03Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
 
         var pattern = new List<string>();
@@ -33,7 +33,7 @@ public class Day03Part1 : IProblemWithInput
             }
         }
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url { get; } = "https://adventofcode.com/2020/day/3";

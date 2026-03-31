@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2015;
 
 public sealed class Day01Part2 : BaseProblemWithInput
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var floor = 0;
         var position = 0;
@@ -15,7 +15,7 @@ public sealed class Day01Part2 : BaseProblemWithInput
             floor = Day01Common.ChangeFloor(floor, c);
         } while (floor >= 0 && position < Input.Length);
 
-        return floor < 0 ? position.ToString() : "-1";
+        return floor < 0 ? position : -1;
     }
 
     public override string Url => "https://adventofcode.com/2015/day/1";

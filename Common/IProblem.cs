@@ -2,7 +2,7 @@
 
 public interface IProblem
 {
-    string GetAnswer();
+    long GetAnswer();
     
     string Url { get; }
     

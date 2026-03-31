@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day12Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
         var answer = 0;
@@ -54,7 +54,7 @@ public sealed class Day12Part1 : IProblemWithInput
             Console.WriteLine(fig.ToString());
         }
 
-        return $"{answer}";
+        return answer;
 
         void ProcessSizeAndOrder(Size size, int[] order)
         {

@@ -8,7 +8,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
 {
     public required string Wire { get; set; } = "a";
 
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         
@@ -25,7 +25,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
             }
         }
 
-        return stack[Wire].ToString();
+        return stack[Wire];
     }
 
     public static (string left, string right)? ParseLine(string line)
@@ -90,7 +90,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
+            stack.TryAdd(dest, 1);
             stack[dest] = Value;
         }
     }
@@ -99,8 +99,8 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Adress, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Adress, 1);
             stack[dest] = stack[Adress];
         }
     }
@@ -109,8 +109,8 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Address, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Address, 1);
             stack[dest] = ~stack[Address];
             if (stack[dest] < 0)
             {
@@ -122,9 +122,9 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Address1, 0);
-            stack.TryAdd(Address2, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Address1, 1);
+            stack.TryAdd(Address2, 1);
             stack[dest] = stack[Address1] & stack[Address2];
         }
     }
@@ -132,9 +132,9 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Address1, 0);
-            stack.TryAdd(Address2, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Address1, 1);
+            stack.TryAdd(Address2, 1);
             stack[dest] = stack[Address1] | stack[Address2];
         }
     }
@@ -142,8 +142,8 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Address, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Address, 1);
             stack[dest] = stack[Address] << Value;
             if (stack[dest] < 0)
             {
@@ -155,10 +155,10 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         public override void Eval(Dictionary<string, long> stack, string dest)
         {
-            stack.TryAdd(dest, 0);
-            stack.TryAdd(Address, 0);
+            stack.TryAdd(dest, 1);
+            stack.TryAdd(Address, 1);
             stack[dest] = stack[Address] >> Value;
-            if (stack[dest] < 0)
+            if (stack[dest] < 1)
             {
                 // stack[dest] += 65535;
             }

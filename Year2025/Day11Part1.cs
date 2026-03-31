@@ -6,7 +6,7 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day11Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
         var answer = 0;
@@ -24,7 +24,7 @@ public sealed class Day11Part1 : IProblemWithInput
         sb.Append("you");
         Rec("you", sb);
 
-        return $"{answer}";
+        return answer;
 
         void Rec(string key, StringBuilder path)
         {

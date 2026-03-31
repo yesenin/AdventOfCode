@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2016;
 
 public class Day03Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         
@@ -49,7 +49,7 @@ public class Day03Part2 : IProblemWithInput
             }
         }
         
-        return answer.ToString();
+        return answer;
     }
 
     private bool IsTriangle(int[] sides)

@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2017;
 
 public class Day02Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0;
         var lines = Input.Split('\n');
@@ -14,7 +14,7 @@ public class Day02Part1 : IProblemWithInput
             var parts = line.Split('\t', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
             answer += (parts.Max() - parts.Min());
         }
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "!TBD";

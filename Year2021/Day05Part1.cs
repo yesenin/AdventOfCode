@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2021;
 
 public class Day05Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         var lines = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries);
@@ -50,7 +50,7 @@ public class Day05Part1 : IProblemWithInput
 
         answer = grid.Count(x => x.Value >= 2);
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "!TBD";

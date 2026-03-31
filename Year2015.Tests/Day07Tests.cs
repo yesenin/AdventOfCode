@@ -5,15 +5,15 @@ namespace AdventOfCode.Year2015.Tests;
 public class Day07Tests
 {
     [Theory]
-    [InlineData("d", "72")]
-    [InlineData("e", "507")]
-    [InlineData("f", "492")]
-    [InlineData("g", "114")]
-    [InlineData("h", "65412")]
-    [InlineData("i", "65079")]
-    [InlineData("x", "123")]
-    [InlineData("y", "456")]
-    public void Day07_Part1_Sample_Test(string wire, string expectedResult)
+    [InlineData("d", 72)]
+    [InlineData("e", 507)]
+    [InlineData("f", 492)]
+    [InlineData("g", 114)]
+    [InlineData("h", 65412)]
+    [InlineData("i", 65079)]
+    [InlineData("x", 123)]
+    [InlineData("y", 456)]
+    public void Day07_Part1_Sample_Test(string wire, long expectedResult)
     {
         var input = """
                     123 -> x
@@ -35,4 +35,22 @@ public class Day07Tests
         
         Assert.Equal(expectedResult, result);
     }
+
+    [Fact]
+    public void Day07_Part1_LShift_Test()
+    {
+        var input = """
+                    bn RSHIFT 2 -> bo
+                    """;
+        var sut = new Day07Part1
+        {
+            Input = input,
+            Wire = "bo"
+        };
+        
+        var result = sut.GetAnswer();
+        
+        Assert.Equal(0, result);
+    }
 }
+                    

@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2016;
 
 public class Day04Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         
@@ -36,7 +36,7 @@ public class Day04Part2 : IProblemWithInput
             Console.WriteLine($"{shifts} -> {string.Join(" ", result)}");
         }
         
-        return answer.ToString();
+        return answer;
         
         char Shift(char c, int shift)
         {

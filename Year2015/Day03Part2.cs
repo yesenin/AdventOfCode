@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2015;
 
 public class Day03Part2 : BaseProblemWithInput
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         var lines = Input!.Split('\n');
 
@@ -37,7 +37,7 @@ public class Day03Part2 : BaseProblemWithInput
             answer += uniquePoints.Count;
         }
         
-        return answer.ToString();
+        return answer;
     }
     
     public override string Url => "https://adventofcode.com/2015/day/3";
