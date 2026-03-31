@@ -12,7 +12,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     {
         var lines = Input!.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         
-        var stack = new Dictionary<string, long>();
+        var stack = new Dictionary<string, ushort>();
 
         foreach (var line in lines)
         {
@@ -44,7 +44,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
         var tokens = left.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         if (tokens.Length == 1)
         {
-            if (int.TryParse(tokens[0], out var i))
+            if (ushort.TryParse(tokens[0], out var i))
             {
                 return new NumeralExpr(i);
             }
@@ -71,11 +71,11 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
             }
             if (tokens[1] == "LSHIFT")
             {
-                return new LShiftExpr(tokens[0], int.Parse(tokens[2]));
+                return new LShiftExpr(tokens[0], ushort.Parse(tokens[2]));
             }
             if (tokens[1] == "RSHIFT")
             {
-                return new RShiftExpr(tokens[0], int.Parse(tokens[2]));
+                return new RShiftExpr(tokens[0], ushort.Parse(tokens[2]));
             }
         }
         return null;
@@ -83,12 +83,12 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
 
     public abstract record Expr
     {
-        public abstract void Eval(Dictionary<string, long> stack, string dest);
+        public abstract void Eval(Dictionary<string, ushort> stack, string dest);
     }
 
-    public record NumeralExpr(int Value) : Expr
+    public record NumeralExpr(ushort Value) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack[dest] = Value;
@@ -97,7 +97,7 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     
     public record MoveExpr(string Adress) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Adress, 1);
@@ -107,66 +107,54 @@ public class Day07Part1 : BaseProblemWithInput, IProblemWithLogger
     
     public record NotExpr(string Address) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Address, 1);
-            stack[dest] = ~stack[Address];
-            if (stack[dest] < 0)
-            {
-                // stack[dest] += 65535 + 1;
-            }
+            stack[dest] = (ushort)~stack[Address];
         }
     }
     public record AndExpr(string Address1, string Address2) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Address1, 1);
             stack.TryAdd(Address2, 1);
-            stack[dest] = stack[Address1] & stack[Address2];
+            stack[dest] = (ushort)(stack[Address1] & stack[Address2]);
         }
     }
     public record OrExpr(string Address1, string Address2) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Address1, 1);
             stack.TryAdd(Address2, 1);
-            stack[dest] = stack[Address1] | stack[Address2];
+            stack[dest] = (ushort)(stack[Address1] | stack[Address2]);
         }
     }
-    public record LShiftExpr(string Address, int Value) : Expr
+    public record LShiftExpr(string Address, ushort Value) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Address, 1);
-            stack[dest] = stack[Address] << Value;
-            if (stack[dest] < 0)
-            {
-                // stack[dest] += 65535;
-            }
+            stack[dest] = (ushort)(stack[Address] << Value);
         }
     }
-    public record RShiftExpr(string Address, int Value) : Expr
+    public record RShiftExpr(string Address, ushort Value) : Expr
     {
-        public override void Eval(Dictionary<string, long> stack, string dest)
+        public override void Eval(Dictionary<string, ushort> stack, string dest)
         {
             stack.TryAdd(dest, 1);
             stack.TryAdd(Address, 1);
-            stack[dest] = stack[Address] >> Value;
-            if (stack[dest] < 1)
-            {
-                // stack[dest] += 65535;
-            }
+            stack[dest] = (ushort)(stack[Address] >> Value);
         }
     }
     
     
-    public override string Title => "Handy Haversacks";
+    public override string Title => "Some Assembly Required";
     public override string Url => "https://adventofcode.com/2015/day/7";
     public ILogger? Logger { get; set; }
 }
