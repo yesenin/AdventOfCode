@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2016;
 
 public class Day01Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         
@@ -90,7 +90,7 @@ public class Day01Part1 : IProblemWithInput
             finishes.Add(Math.Abs(position.x) + Math.Abs(position.y));
         }
         
-        return $"{string.Join(", ", finishes)}";
+        return long.Parse($"{string.Join(", ", finishes)}");
     }
 
     public string Url => "!TBD";

@@ -4,18 +4,21 @@ namespace AdventOfCode.Year2020;
 
 public class Day05Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
         
         foreach (var line in lines)
         {
-            var a = (ulong)GetId(line);
-            if (a > answer) answer = a;
+            var a = (long)GetId(line);
+            if (a > answer)
+            {
+                answer = a;
+            }
         }
         
-        return $"{answer}";
+        return answer;
 
         int GetId(string input)
         {

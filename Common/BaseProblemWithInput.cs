@@ -4,9 +4,9 @@ public abstract class BaseProblemWithInput : IProblemWithInput
 {
     private bool ValidateInput() => !string.IsNullOrEmpty(Input);
 
-    protected abstract string GetAnswerInner();
+    protected abstract long GetAnswerInner();
 
-    public string GetAnswer()
+    public long GetAnswer()
     {
         return !ValidateInput() ? throw new ArgumentException("Invalid input") : GetAnswerInner();
     }

@@ -4,16 +4,16 @@ namespace AdventOfCode.Year2020;
 
 public class Day05Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
         
-        var seats = new List<ulong>();
+        var seats = new List<long>();
         
         foreach (var line in lines)
         {
-            seats.Add((ulong)GetId(line));
+            seats.Add((long)GetId(line));
         }
         
         seats.Sort();
@@ -27,7 +27,7 @@ public class Day05Part2 : IProblemWithInput
             }
         }
         
-        return $"{answer}";
+        return answer;
 
         int GetId(string input)
         {

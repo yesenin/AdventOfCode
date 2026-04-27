@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2015;
 
 public sealed class Day02Part1 : BaseProblemWithInput, IProblemWithLogger
 {
-    protected override string GetAnswerInner()
+    protected override long GetAnswerInner()
     {
         Logger?.Information("Solving {Title}.", Title);
 
@@ -23,7 +23,7 @@ public sealed class Day02Part1 : BaseProblemWithInput, IProblemWithLogger
             total += area + min;
         }
 
-        return total.ToString();
+        return total;
     }
 
     public override string Url => "https://adventofcode.com/2015/day/2";

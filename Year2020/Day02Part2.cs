@@ -5,9 +5,9 @@ namespace AdventOfCode.Year2020;
 
 public class Day02Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
 
         var regex = new Regex(@"(\d+)-(\d+) (.{1}): (.+)");
@@ -27,7 +27,7 @@ public class Day02Part2 : IProblemWithInput
             }
         }
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url { get; } = "https://adventofcode.com/2020/day/2";

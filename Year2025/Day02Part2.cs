@@ -4,15 +4,15 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day02Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var a = Input.Split(',');
         foreach (var range in a)
         {
             var parts = range.Split('-');
-            var start = ulong.Parse(parts[0]);
-            var end = ulong.Parse(parts[1]);
+            var start = long.Parse(parts[0]);
+            var end = long.Parse(parts[1]);
             for (var i = start; i <= end; i++)
             {
                 // Console.WriteLine($"Check number {i}");
@@ -39,7 +39,7 @@ public sealed class Day02Part2 : IProblemWithInput
                 }
             }
         }
-        return answer.ToString();
+        return answer;
     }
 
     private bool IsRepeating(string line, int subStringToFindLength)

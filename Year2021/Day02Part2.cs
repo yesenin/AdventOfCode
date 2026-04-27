@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2021;
 
 public class Day02Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         var lines = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries);
@@ -40,7 +40,7 @@ public class Day02Part2 : IProblemWithInput
 
         answer = x * y;
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "!TBD";

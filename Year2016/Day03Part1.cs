@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2016;
 
 public class Day03Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         
@@ -39,7 +39,7 @@ public class Day03Part1 : IProblemWithInput
             }
         }
         
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "!TBD";

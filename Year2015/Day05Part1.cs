@@ -2,11 +2,11 @@
 
 namespace AdventOfCode.Year2015;
 
-public class Day05Part1 : IProblemWithInput
+public class Day05Part1 : BaseProblemWithInput
 {
-    public string GetAnswer()
+    protected override long GetAnswerInner()
     {
-        var lines = Input.Split('\n').Select(x => x.Trim()).ToArray();
+        var lines = Input!.Split('\n').Select(x => x.Trim()).ToArray();
         var answer = new List<string>();
         var count = 0;
         foreach (var line in lines)
@@ -29,7 +29,7 @@ public class Day05Part1 : IProblemWithInput
             }
         }
         
-        return string.Join("\n", answer) + $"\n{count}";
+        return long.Parse(string.Join("\n", answer) + $"\n{count}");
 
         void Rec(string line, int i, State state)
         {
@@ -65,16 +65,15 @@ public class Day05Part1 : IProblemWithInput
 
     class State
     {
-        public Dictionary<char, int> Vowels { get; } = new Dictionary<char, int>();
+        public Dictionary<char, int> Vowels { get; } = [];
 
-        public List<string> DoubleConsonant { get; } = new List<string>();
+        public List<string> DoubleConsonant { get; } = [];
 
-        public List<string> BadDoubles { get; } = new List<string>();
+        public List<string> BadDoubles { get; } = [];
         
         public char PrevConsonant { get; set; }
     }
 
-    public string Url => "!TBD";
-    public string Title => "!TBD";
-    public string? Input { get; set; }
+    public override string Url => "https://adventofcode.com/2015/day/5";
+    public override string Title => "!TBD";
 }

@@ -4,9 +4,9 @@ namespace AdventOfCode.Year2019;
 
 public class Day01Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input!.Split('\n', StringSplitOptions.TrimEntries);
 
         var numbers = new List<int>();
@@ -22,9 +22,9 @@ public class Day01Part1 : IProblemWithInput
             temp.Add(number / 3 - 2);
         }
         
-        answer = (ulong)temp.Sum();
+        answer = temp.Sum();
 
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "!TBD";

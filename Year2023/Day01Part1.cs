@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2023;
 
 public class Day01Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         var answer = 0;
@@ -24,7 +24,7 @@ public class Day01Part1 : IProblemWithInput
             answer += int.Parse($"{line[i]}{line[j]}");
         }
         
-        return answer.ToString();
+        return answer;
     }
 
     public string Url => "https://adventofcode.com/2023/day/1";

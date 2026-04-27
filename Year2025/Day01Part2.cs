@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day01Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var a = Input.Split('\n');
         var pos = 50;
@@ -75,7 +75,7 @@ public sealed class Day01Part2 : IProblemWithInput
                 Console.WriteLine(zero);
             }
         }
-        return answer.ToString();
+        return answer;
     }
     
     public string Url => "https://adventofcode.com/2025/day/1";

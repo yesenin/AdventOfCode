@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2023;
 
 public class Day01Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n').Select(l => l.Trim()).ToArray();
         var answer = 0;
@@ -44,7 +44,7 @@ public class Day01Part2 : IProblemWithInput
             answer += int.Parse($"{a}{b}");
         }
         
-        return answer.ToString();
+        return answer;
 
         bool HasString(string s, out int i)
         {

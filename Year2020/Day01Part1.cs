@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2020;
 
 public class Day01Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
 
@@ -25,9 +25,9 @@ public class Day01Part1 : IProblemWithInput
             }
         }
 
-        ulong answer = (ulong)sub.Aggregate((acc, x) => acc * x);
+        long answer = sub.Aggregate((acc, x) => acc * x);
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "https://adventofcode.com/2020/day/1";

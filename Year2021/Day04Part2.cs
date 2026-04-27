@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2021;
 
 public class Day04Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var answer = 0L;
         var lines = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries);
@@ -30,7 +30,7 @@ public class Day04Part2 : IProblemWithInput
 
         answer = PlaySeries();
         
-        return $"{answer}";
+        return answer;
 
         int PlaySeries()
         {

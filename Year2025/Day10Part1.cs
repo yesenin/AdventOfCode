@@ -6,7 +6,7 @@ namespace AdventOfCode.Year2025;
 
 public partial class Day10Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
         var answer = 0;
@@ -38,7 +38,7 @@ public partial class Day10Part1 : IProblemWithInput
             DoInput(input);
         }
 
-        return $"{answer}";
+        return answer;
     }
 
     private void DoInput(Input input)

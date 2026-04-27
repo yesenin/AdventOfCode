@@ -5,9 +5,9 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day08Part1 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
-        ulong answer = 0;
+        long answer = 0;
         var lines = Input.Split('\n');
 
         var points = new List<Point3d>();
@@ -43,9 +43,9 @@ public sealed class Day08Part1 : IProblemWithInput
             k++;
         }
 
-        answer = (ulong)CalculateAnswer();
+        answer = (long)CalculateAnswer();
 
-        return $"{answer}";
+        return answer;
 
         int Find(int x)
         {

@@ -6,22 +6,22 @@ public sealed class Day07Part2 : IProblemWithInput
 {
     public string Input { get; set; } = string.Empty;
 
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         // TODO: review that
-        var memo = new Dictionary<string, ulong>();
+        var memo = new Dictionary<string, long>();
 
         var map = new Stack<string>();
         var beams = new Stack<int>();
 
-        ulong answer = Rec(0, map, beams);
+        long answer = Rec(0, map, beams);
 
         Console.WriteLine("Done");
 
-        return answer.ToString();
+        return answer;
 
-        ulong Rec(int lineIndex, Stack<string> s, Stack<int> b)
+        long Rec(int lineIndex, Stack<string> s, Stack<int> b)
         {
             var memoKey = $"{lineIndex}:{string.Join(',', b.ToArray())}";
             if (memo.TryGetValue(memoKey, out var cached))
@@ -71,7 +71,7 @@ public sealed class Day07Part2 : IProblemWithInput
                 b.Pop();
             }
 
-            ulong localAnswer = 0;
+            long localAnswer = 0;
 
             if (toAdd.Any())
             {

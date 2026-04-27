@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day09Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n');
         int answer = 0;
@@ -114,7 +114,7 @@ public sealed class Day09Part2 : IProblemWithInput
         
         answer = maxValue;
         
-        return $"{answer}";
+        return answer;
         
         int GetSquare((int x, int y) p1, (int x, int y) p2)
         {

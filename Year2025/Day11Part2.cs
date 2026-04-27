@@ -6,10 +6,10 @@ namespace AdventOfCode.Year2025;
 
 public sealed class Day11Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         var lines = Input.Split('\n', StringSplitOptions.TrimEntries);
-        ulong answer = 0;
+        long answer = 0;
 
         var graph = new Dictionary<string, List<string>>();
 
@@ -55,7 +55,7 @@ public sealed class Day11Part2 : IProblemWithInput
             getConnections = toProcess.Select(x => x).Distinct().ToList();
         }
 
-        var tempDict = new Dictionary<string, ulong>();
+        var tempDict = new Dictionary<string, long>();
         foreach (var key in graph.Keys)
         {
             tempDict[key] = 0L;
@@ -70,7 +70,7 @@ public sealed class Day11Part2 : IProblemWithInput
         }
         
         answer = tempDict["svr"];
-        return $"{answer}";
+        return answer;
 
         List<string> GetAllConnectionTo(string node)
         {

@@ -4,13 +4,13 @@ using Common;
 
 namespace AdventOfCode.Year2015;
 
-public class Day04Part2 : IProblemWithInput
+public class Day04Part2 : BaseProblemWithInput
 {
-    public string GetAnswer()
+    protected override long GetAnswerInner()
     {
-        var lines = Input.Split('\n');
+        var lines = Input!.Split('\n');
 
-        var answer = new List<string>();
+        var answer = 0;
 
         foreach (var line in lines)
         {
@@ -29,15 +29,14 @@ public class Day04Part2 : IProblemWithInput
                 i++;
             }
             
-            answer.Add(i.ToString());
+            answer += i;
         }
         
-        return string.Join("\n", answer);
+        return answer;
     }
     
     record Point(int X, int Y);
 
-    public string Url => "!TBD";
-    public string Title => "!TBD";
-    public string? Input { get; set; }
+    public override string Url => "https://adventofcode.com/2015/day/4";
+    public override string Title => "!TBD";
 }

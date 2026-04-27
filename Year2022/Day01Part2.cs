@@ -4,7 +4,7 @@ namespace AdventOfCode.Year2022;
 
 public class Day01Part2 : IProblemWithInput
 {
-    public string GetAnswer()
+    public long GetAnswer()
     {
         long answer = 0;
         
@@ -26,7 +26,7 @@ public class Day01Part2 : IProblemWithInput
 
         answer = callories.OrderDescending().Take(3).Sum();
         
-        return $"{answer}";
+        return answer;
     }
 
     public string Url => "!TBD";
